@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<style>
+    .button {
+        background-color: #008CBA;
+        color: white;
+        border: 2px solid black;
+        padding: 20px;
+        font-size: 18px;
+        margin: 4px 2px;
+        border-radius: 12px;
+    }
+    /* Blue */
+
+    .mydiv {
+        border: 5px outset black;
+        background-color: lightblue;
+        text-align: center;
+    }
+</style>
+
+
+<head>
+    <link rel="stylesheet" href="./index.css"/>
+    <style>
+    @media only screen and (max-width: 773px) {
+      .logo {
+          padding-bottom: 20px;
+      }
+    }
+    </style>
+    <script type="text/javascript" src="functions.js"></script>
+    <script type="text/javascript" src="vars.js"></script>
+
+</head>
+<html>
+    <body>
+        <header class="main-header">
+            <div class="acontainer">
+                <img class="logo" src="BFR dark transparent.png" width="181.75" height="75.25" alt="Flexbox.ninja">
+                <h1 style="margin: 0px;">Manual Pneumatic Cuff Input</h1>
+                <div class="empty-padding"></div>
+            </div>
+        </header>
+    <div class="flex-column-centered checkbox-padding">
+        <p style="color: #494f56">Instructions to use BFR Training</p>
+        <a href="/upperbody_manuelcuff.html">Upper Body Application</a> <a href="">Lower Body Application</a>
+    </div>
+    <div class="checkbox-padding">
+        <p style="color: #494f56;"> Select Upper/Lower Body Application</p>
+        <div class="flexbox-checkbox-item">
+        <input type = "radio" id="upper" name = "upperLower" value="upper" onclick="clickUpper()"> 
+        <label for="upper" style="font-size: 18px; display: inline;">Upper Body</label> <br>
+        <input type = "radio" id="lower" name = "upperLower" value="lower" onclick="clickLower()"> 
+        <label for="lower" style="font-size: 18px; display: inline;">Lower Body</label> <br>
+        </div>
+        <br>
+
+        <p id="chooseWidthLabel" style="color: #494f56; visibility: hidden;"> Choose Your Cuff Width</p>
+        <input type = "radio" id="five" style="visibility: hidden;" name = "cuff" value="five" onclick="clickAnyCuffSize()"> 
+        <label for="five" id="fiveLabel" style="font-size: 18px; display: inline; visibility: hidden;">5cm</label> <br>
+        <input type = "radio" id="eleven" style="visibility: hidden;" name = "cuff" value="eleven" onclick="clickAnyCuffSize()"> 
+        <label for="eleven" id="elevenLabel" style="font-size: 18px; display: inline; visibility: hidden;">11cm</label> <br>
+        <input type = "radio" id="thirteen" style="visibility: hidden;" name = "cuff" value="thirteen" onclick="clickAnyCuffSize()"> 
+        <label for="thirteen" id="thirteenLabel" style="font-size: 18px; display: inline; visibility: hidden;">13cm</label> <br>
+        <input type = "radio" id="eighteen" style="visibility: hidden;" name = "cuff" value="eighteen" onclick="clickEighteen()"> 
+        <label for="eighteen" id="eighteenLabel" style="font-size: 18px; display: inline; visibility: hidden;">18cm</label> <br>
+
+        <p id="enterInfoLabel" style="color: #494f56; visibility: hidden;"> Please enter the following information</p>
+        <label for="SBP" id="sbpLabel" style="color: #5e7483; visibility: hidden;">Systolic Blood Pressure</label>
+        <input type="text" id="sbp" style="visibility: hidden;" name="sbp">
+        <br><br>
+        <label for="dbp" id="dbpLabel" style="color: #5e7483; visibility: hidden;">Diastolic Blood Pressure</label>
+        <input type="text" id="dbp" style="visibility: hidden;" name="dbp">
+        <br><br>
+        <label for="circumference" id="circumferenceLabel" style="color: #5e7483; visibility: hidden;">Limb Circumference (cm)</label>
+        <input type="text" id="circumference" style="visibility: hidden;" name="circumference">
+        <br><br>
+
+        <p id="sexLabel" style="color: #5e7483; visibility: hidden;">BFR User's Sex</p>
+        <input type = "radio" id="male" style="visibility: hidden;" name = "sex" value="male"> 
+        <label for="male" id="maleLabel" style="font-size: 18px; display: inline; visibility: hidden;">Male</label> <br>
+        <input type = "radio" id="female" style="visibility: hidden;" name = "sex" value="female"> 
+        <label for="female" id="femaleLabel" style="font-size: 18px; display: inline; visibility: hidden;">female</label> <br>
+        <br><br>
+
+        <label for="age" id="ageLabel" style="color: #5e7483; visibility: hidden;"> BFR User's Age</label>
+        <input type="text" id="age" style="visibility: hidden;" name="age">
+        <br><br>
+
+        <a href="">Reset</a>
+        <a href="/resultsSlider.html" onclick="calculateAOP()">Submit</a>
+    </div>
+    </body>
+</html>

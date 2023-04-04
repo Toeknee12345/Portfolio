@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="./index.css"/>
+    <style>
+    @media only screen and (max-width: 773px) {
+      .logo {
+          padding-bottom: 20px;
+      }
+    }
+    </style>
+<script type="text/javascript" src="functions.js"></script>
+
+</head>
+<html>
+    <body>
+        <header class="main-header">
+            <div class="acontainer">
+                <img class="logo" src="BFR dark transparent.png" width="181.75" height="75.25" alt="Flexbox.ninja">
+                <h1 style="margin: 0px;">Screening Form</h1>
+                <div class="empty-padding"></div>
+            </div>
+        </header>
+        <div class="flex-column-centered flexbox-checkbox-item">
+            <p style="text-align:center; color:#5e7483; font-size: 20px;">Your AOP (Arterial Occlusion Pressure) estimates</p>
+            <!--<p text-size: 16px text-align:center>Based off of your inputs</p>-->
+            <p id="AOPfinal" style="text-align:center; color:#5e7483"></p>
+        
+        <div class="slidecontainer">
+            <input type="range" min="40" max="80" value="50" class="slider" id="results">
+            <p id="AOPproportion" style="text-align: center; color:#5e7483"><b>Result:</p>
+        </div>
+        </div>
+        <script>
+            var AOP = localStorage.getItem('aopValue') ? JSON.parse(localStorage.getItem('aopValue')) : '';
+            document.getElementById("AOPfinal").innerText = Math.floor(AOP) + " mmHg";
+            var slider = document.getElementById("results");
+            var percentage = document.getElementById("AOPproportion");
+            percentage.innerText = "Result: " + (Math.floor((50/100)*AOP)) + " mmHg " + "(" + 50 + "%" + ")";
+            
+            slider.oninput = function() {
+                percentage.innerText = "Result: " + (Math.floor((this.value/100)*AOP)) + " mmHg " + "(" + this.value + "%" + ")";
+                document.getElementById("AOPfinal").innerText = Math.floor(AOP) + " mmHg";
+            }
+            
+        </script>
+    </body>
+</html>
